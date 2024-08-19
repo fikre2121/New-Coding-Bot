@@ -1,92 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact Page</title>
-  <!--link rel="stylesheet" type="text/css" href="styles.css"-->
-  <style>
-    /* General styles */
-body {
-    font-family: Arial, sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Manipulation</title>
+    <style>
+        body {
     margin: 0;
     padding: 0;
-  }
-  
-  header, main, footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    background-color: rgb(27, 36, 74);
     padding: 20px;
-  }
-  
-  /* Contact form styles */
-  .contact-form {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 5px;
-  }
-  
-  .contact-form label, .contact-form input, .contact-form textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-  }
-  
-  .contact-form input, .contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .contact-form button {
-    background-color: #4CAF50;
+    border-radius: 10px;
+    max-width: 500px;
+}
+
+.column {
     color: white;
-    padding: 10px 20px;
-    border: none;
+    margin: 0 20px;
+    text-align: center;
+}
+
+.counter {
+    background-color: black;
+    color: Red;
+    padding: 10px;
+    margin: 10px 0;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.buttons button {
+    color: white;
+    background-color: rgb(27, 36, 74);
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  /* Contact info styles */
-  .contact-info {
-    margin-top: 20px;
-  }
-  
-  /* Footer styles */
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-  }
-  </style>
+}
+
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Contact Us</h1>
-  </header>
-
-  <main>
-    <section class="contact-form">
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-
-        <button type="submit">Submit</button>
-      </form>
-    </section>
-
-    <section class="contact-info">
-      <h2>Get in Touch</h2>
-      <p>Phone: 123-456-7890</p>
-      <p>Email: info@example.com</p>
-      <p>Address: 123 Main Street, Anytown USA</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2024 Contact Page. All rights reserved.</p>
-  </footer>
+    <div class="container">
+        <div class="column">
+            <h2>Home</h2>
+            <div class="counter" id="home-counter">0</div>
+            <div class="buttons">
+                <button onclick="increment('home', 1)">+1</button>
+                <button onclick="increment('home', 2)">+2</button>
+                <button onclick="increment('home', 3)">+3</button>
+            </div>
+        </div>
+        <div class="column">
+            <h2>Guest</h2>
+            <div class="counter" id="guest-counter">0</div>
+            <div class="buttons">
+                <button onclick="increment('guest', 1)">+1</button>
+                <button onclick="increment('guest', 2)">+2</button>
+                <button onclick="increment('guest', 3)">+3</button>
+            </div>
+        </div>
+    </div>
+  
+    <script src="script.js"></script>
 </body>
-</html>
